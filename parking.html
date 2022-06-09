@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    
+   <script src="angular.min.js"></script>
+       
+   <script src="parking.js"></script>
+   
+<style>
+    header{
+        background-color: beige;
+        border: 2px solid bisque;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .slot{
+        margin:auto;
+        height:500px;
+        width:30%;
+        text-align: center;
+        border:2px solid black;
+        border-radius: 10px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        background-color: green;
+        
+    }
+    .slot-container{
+        display:flex;
+        margin-top:40px;
+    }
+</style>
+<body ng-App="smartparking">
+    <header>
+        <h1>Smart Parking</h1>
+    </header>
+    <div ng-controller="parking"  class="slot-container">
+        <!-- {{value.field1}}
+        {{value.field2}}
+        {{value.field3}} -->
+        <div class="slot" ng-style="{'background-color':(value.field1<40) ? 'red':''}"><h3>Slot1</h3></div>
+        <div class="slot" ng-style="{'background-color':(value.field2<40) ? 'red':''}"><h3>Slot2</h3></div>
+        <div class="slot" ng-style="{'background-color':(value.field3<40) ? 'red':''}"><h3>Slot3</h3></div>
+    </div>
+</body>
+<script>
+  setTimeout(function(){
+   window.location.reload(1);
+}, 5000);
+</script>
+</html>
